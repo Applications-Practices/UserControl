@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIC-Yh-Huq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="InnocvTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4z-sT-fPf">
+                                <rect key="frame" x="16" y="94" width="382" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="71m-46-QdZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="kap-Lr-iar">
+                                <rect key="frame" x="122.5" y="238" width="169" height="420"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egc-ya-oGw">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9Xg-PF-Ah9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="New User"/>
+                                        <connections>
+                                            <action selector="didTapNewUserButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ccp-Ec-SUg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcU-Qg-9Dd">
+                                        <rect key="frame" x="0.0" y="76" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1Px-0j-Pkq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get User List"/>
+                                        <connections>
+                                            <action selector="didTapGetUserListButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DU4-uP-t6B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2s-0B-x0m">
+                                        <rect key="frame" x="0.0" y="152" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RbL-KL-7VC"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get User"/>
+                                        <connections>
+                                            <action selector="didTapGetUserButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mzj-bl-9sM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5g-nr-gp6">
+                                        <rect key="frame" x="0.0" y="228" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ks5-jN-sXu"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Update User"/>
+                                        <connections>
+                                            <action selector="didTapUpdateUserButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vFh-hd-tMi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNy-de-1dl">
+                                        <rect key="frame" x="0.0" y="304" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="W1x-N7-yyv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete User"/>
+                                        <connections>
+                                            <action selector="didTapDeleteUserButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qJ0-B6-8aT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMS-HY-dIi">
+                                        <rect key="frame" x="0.0" y="380" width="169" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fCy-K2-TTp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Undo Last User Action"/>
+                                        <connections>
+                                            <action selector="didTapUndoLastUserActionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yLt-UR-s8D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="hcx-5E-6qn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="z4z-sT-fPf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="6vu-Tp-apC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kap-Lr-iar" secondAttribute="trailing" constant="50" id="QdW-SK-2zB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="z4z-sT-fPf" secondAttribute="trailing" constant="16" id="WAa-h9-sRp"/>
+                            <constraint firstItem="kap-Lr-iar" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" priority="800" id="bb2-HG-k95"/>
+                            <constraint firstItem="kap-Lr-iar" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cpe-Hc-XT0"/>
+                            <constraint firstItem="z4z-sT-fPf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nbp-B1-MfO"/>
+                            <constraint firstItem="kap-Lr-iar" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="pw7-ZC-PPO"/>
+                            <constraint firstItem="kap-Lr-iar" firstAttribute="top" relation="greaterThanOrEqual" secondItem="z4z-sT-fPf" secondAttribute="bottom" constant="20" id="rHo-79-Goe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kap-Lr-iar" secondAttribute="bottom" constant="10" id="t4J-ur-yWe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7gN-g3-Ich"/>
+                    <connections>
+                        <outlet property="deleteUserButton" destination="mNy-de-1dl" id="fMK-jw-w5e"/>
+                        <outlet property="getUserButton" destination="t2s-0B-x0m" id="5N2-E8-sbp"/>
+                        <outlet property="getUserListButton" destination="gcU-Qg-9Dd" id="rIM-1l-zia"/>
+                        <outlet property="newUserButton" destination="egc-ya-oGw" id="EcV-jO-fhO"/>
+                        <outlet property="titleLabel" destination="z4z-sT-fPf" id="S21-7C-OF9"/>
+                        <outlet property="undoLastUserActionButton" destination="CMS-HY-dIi" id="eCW-gv-wug"/>
+                        <outlet property="updateUserButton" destination="V5g-nr-gp6" id="wvb-u0-0Qp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="134.59821428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tTR-9M-wer">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="cIC-Yh-Huq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S7G-Kk-Wde">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="ieT-En-1Nq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBN-GM-8XI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

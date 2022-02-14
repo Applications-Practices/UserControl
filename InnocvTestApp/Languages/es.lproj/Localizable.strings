@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  InnocvTestApp
+
+  Created by Pablo López Iborra on 14/2/22.
+  
+*/
+
+//Home
+"title_label_home" = "Opciones de Usuario";
+"title_button_create_new_user_home" = "Crear Usuario";
+"title_button_get_user_list_home" = "Obtener Lista de Usuarios";
+"title_button_get_user_home" = "Obtener Usuario";
+"title_button_update_user_home" = "Actualizar Usuario";
+"title_button_delete_new_user_home" = "Borrar Usuario";
+"title_button_undo_last_user_action_home" = "Deshacer Última Acción";
+"title_successful_alert_home" = "Enhorabuena";
+"text_successful_alert_home" = "Acción realizada correctamente";
+"title_unsuccessful_alert_home" = "Error";
+"text_unsuccessful_alert_home" = "La acción no se ha podido realizar correctamente";
+"title_action_button_result_alert_home" = "Cerrar";
