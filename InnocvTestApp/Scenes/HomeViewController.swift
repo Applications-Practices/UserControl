@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     }
     
     func setDefaultText() {
+        self.titleLabel.text = R.Strings.homeTitle
         self.newUserButton.setTitle(R.Strings.homeCreateNewUser, for: .normal)
         
         self.getUserListButton.setTitle(R.Strings.homeGetUserList, for: .normal)

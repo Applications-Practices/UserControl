@@ -19,3 +19,15 @@
 "title_unsuccessful_alert_home" = "Error";
 "text_unsuccessful_alert_home" = "La acción no se ha podido realizar correctamente";
 "title_action_button_result_alert_home" = "Cerrar";
+
+//CRUD Alert
+"text_id_textfield_crud_alert" = "ID";
+"text_name_textfield_crud_alert" = "Nombre";
+"text_birthdate_textfield_crud_alert" = "Fecha de cumpleaños";
+"text_calendar_button_crud_alert" = "Calendario";
+"text_cancel_button_crud_alert" = "Cancelar";
+"text_accept_button_crud_alert" = "Aceptar";
+
+//Keyboard
+"text_cancel_button_keyboard" = "Cancelar";
+"text_done_button_keyboard" = "Hecho";

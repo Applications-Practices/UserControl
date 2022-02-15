@@ -49,7 +49,34 @@ extension R {
         static var homeTitleActionButtonResultAlert: String {
             return NSLocalizedString("title_action_button_result_alert_home", comment: "")
         }
+        
+        //CRUD Alert
+        static var crudAlertIDTextfield: String {
+            return NSLocalizedString("text_id_textfield_crud_alert", comment: "")
+        }
+        static var crudAlertNameTextfield: String {
+            return NSLocalizedString("text_name_textfield_crud_alert", comment: "")
+        }
+        static var crudAlertBirthdateTextfield: String {
+            return NSLocalizedString("text_birthdate_textfield_crud_alert", comment: "")
+        }
+        static var crudAlertCalendarButton: String {
+            return NSLocalizedString("text_calendar_button_crud_alert", comment: "")
+        }
+        static var crudAlertCancelButton: String {
+            return NSLocalizedString("text_cancel_button_crud_alert", comment: "")
+        }
+        static var crudAlertAcceptButton: String {
+            return NSLocalizedString("text_accept_button_crud_alert", comment: "")
+        }
+        
+        //Keyboard
+        static var keyboardCancelButton: String {
+            return NSLocalizedString("text_cancel_button_keyboard", comment: "")
+        }
+        static var keyboardDoneButton: String {
+            return NSLocalizedString("text_done_button_keyboard", comment: "")
+        }
     }
     
 }
-

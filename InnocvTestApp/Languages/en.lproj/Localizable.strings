@@ -20,3 +20,16 @@
 "text_unsuccessful_alert_home" = "The action could not be performed correctly";
 "title_action_button_result_alert_home" = "Close";
 
+//CRUD Alert
+"text_id_textfield_crud_alert" = "ID";
+"text_name_textfield_crud_alert" = "Name";
+"text_birthdate_textfield_crud_alert" = "Birthdate";
+"text_calendar_button_crud_alert" = "Calendar";
+"text_cancel_button_crud_alert" = "Cancel";
+"text_accept_button_crud_alert" = "Accept";
+
+//Keyboard
+"text_cancel_button_keyboard" = "Cancel";
+"text_done_button_keyboard" = "Done";
+
+

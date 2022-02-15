@@ -54,10 +54,20 @@ class CRUDAlert: UIView {
     }
     
     private func setupInitialConfiguration() {
+        self.setDefaultText()
         self.setTypeAlert()
         self.setDatePicker()
         self.setActiveButton(button: self.cancelButton, enable: true)
         self.setActiveButton(button: self.acceptButton, enable: false)
+    }
+    
+    private func setDefaultText() {
+        self.idTextField.placeholder = R.Strings.crudAlertIDTextfield
+        self.nameTextField.placeholder = R.Strings.crudAlertNameTextfield
+        self.birthdateTextField.placeholder = R.Strings.crudAlertBirthdateTextfield
+        self.calendarButton.setTitle(R.Strings.crudAlertCalendarButton, for: .normal)
+        self.cancelButton.setTitle(R.Strings.crudAlertCancelButton, for: .normal)
+        self.acceptButton.setTitle(R.Strings.crudAlertAcceptButton, for: .normal)
     }
     
     private func setTypeAlert() {
