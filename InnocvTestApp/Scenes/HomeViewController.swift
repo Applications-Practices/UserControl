@@ -49,10 +49,24 @@ class HomeViewController: UIViewController {
     }
     
     private func createNewUser() {
-        UserProvider().createNewUser(id: 4902, name: "Pablo", birthdate: Date(), completion: { result in
-            DispatchQueue.main.async {
-                self.createResultAlert(result: result)
+        self.createCRUDAlert(title: R.Strings.homeCreateNewUser, crudType: .POST, acceptAction: { alert in
+            var id = 0
+            var name = ""
+            var birthdate = Date()
+            
+            if let idAlert = alert.id {
+                id = idAlert
             }
+            
+            if let nameAlert = alert.name {
+                name = nameAlert
+            }
+            
+            UserProvider().createNewUser(id: id, name: name, birthdate: birthdate, completion: { result in
+                DispatchQueue.main.async {
+                    self.createResultAlert(result: result)
+                }
+            })
         })
     }
     
@@ -70,6 +84,10 @@ class HomeViewController: UIViewController {
                 self.createResultAlert(result: result)
             }
         })
+    }
+    
+    private func createCRUDAlert(title: String, crudType: R.Requests.METHOD, acceptAction: ((_ alert: CRUDAlert) -> Void)?) {
+        let _ = R.Alerts.createCRUDAlert(title: title, crudType: crudType, acceptAction: acceptAction)
     }
     
     private func createResultAlert(result: Bool) {

@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class R {
     
-    
+    //MARK: Generic Resources
+    //Main window
+    static var window: UIWindow? {
+        return UIApplication.keyWindow
+    }
     
 }

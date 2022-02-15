@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CRUDAlert" customModule="InnocvTestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTF-6p-P7s">
+                    <rect key="frame" x="65" y="319" width="298" height="288"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRUD Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pe-cS-bh7">
+                            <rect key="frame" x="12" y="22" width="274" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nLw-p8-z0n">
+                            <rect key="frame" x="12" y="52" width="274" height="183"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3v-qZ-kV9">
+                                    <rect key="frame" x="0.0" y="0.0" width="274" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAq-b0-tjD">
+                                    <rect key="frame" x="0.0" y="54" width="274" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                </textField>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7pD-3q-ooo">
+                                    <rect key="frame" x="0.0" y="108" width="274" height="75"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RM3-dl-WG4">
+                                            <rect key="frame" x="0.0" y="0.0" width="274" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-Iv-4gG">
+                                            <rect key="frame" x="30" y="44" width="214" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Calendar"/>
+                                            <connections>
+                                                <action selector="didTapCalendarButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KbF-md-Eoj"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RM3-dl-WG4" firstAttribute="leading" secondItem="7pD-3q-ooo" secondAttribute="leading" id="Bak-tG-14g"/>
+                                        <constraint firstAttribute="trailing" secondItem="4DY-Iv-4gG" secondAttribute="trailing" constant="30" id="CTL-wg-hZu"/>
+                                        <constraint firstAttribute="trailing" secondItem="RM3-dl-WG4" secondAttribute="trailing" id="IEB-ae-4Il"/>
+                                        <constraint firstItem="4DY-Iv-4gG" firstAttribute="leading" secondItem="7pD-3q-ooo" secondAttribute="leading" constant="30" id="Jk6-ud-BeI"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="P3v-qZ-kV9" secondAttribute="trailing" id="Jwu-uU-9He"/>
+                                <constraint firstItem="WAq-b0-tjD" firstAttribute="leading" secondItem="nLw-p8-z0n" secondAttribute="leading" id="M8z-N5-5J8"/>
+                                <constraint firstItem="P3v-qZ-kV9" firstAttribute="leading" secondItem="nLw-p8-z0n" secondAttribute="leading" id="QlX-70-LPx"/>
+                                <constraint firstItem="7pD-3q-ooo" firstAttribute="leading" secondItem="nLw-p8-z0n" secondAttribute="leading" id="aEV-JW-GoS"/>
+                                <constraint firstAttribute="trailing" secondItem="7pD-3q-ooo" secondAttribute="trailing" id="bme-Br-aYT"/>
+                                <constraint firstAttribute="trailing" secondItem="WAq-b0-tjD" secondAttribute="trailing" id="zWc-WK-Cuk"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HLc-KQ-PiC">
+                            <rect key="frame" x="0.0" y="247" width="298" height="41"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-bH-Tjq">
+                                    <rect key="frame" x="0.0" y="0.0" width="298" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="bwZ-cT-1A5"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-hA-Yd9">
+                                    <rect key="frame" x="0.0" y="1" width="298" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNC-j0-1DO">
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="40"/>
+                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            <connections>
+                                                <action selector="didTapCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZIz-GS-npf"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vD-gP-BN0">
+                                            <rect key="frame" x="149" y="0.0" width="149" height="40"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Accept"/>
+                                            <connections>
+                                                <action selector="didTapAcceptButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="sIx-TT-uf5"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="u3U-SI-Yyl"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="1pe-cS-bh7" secondAttribute="trailing" constant="12" id="620-OE-r4k"/>
+                        <constraint firstAttribute="width" id="7nU-YC-a8T">
+                            <variation key="heightClass=regular-widthClass=regular" constant="300"/>
+                        </constraint>
+                        <constraint firstItem="nLw-p8-z0n" firstAttribute="top" secondItem="1pe-cS-bh7" secondAttribute="bottom" constant="12" id="GNV-vu-a9j"/>
+                        <constraint firstAttribute="bottom" secondItem="HLc-KQ-PiC" secondAttribute="bottom" id="Hml-Eq-caa"/>
+                        <constraint firstItem="nLw-p8-z0n" firstAttribute="centerX" secondItem="gTF-6p-P7s" secondAttribute="centerX" id="KBD-Ig-ie0"/>
+                        <constraint firstItem="1pe-cS-bh7" firstAttribute="top" secondItem="gTF-6p-P7s" secondAttribute="top" constant="22" id="Ni7-Ii-6id"/>
+                        <constraint firstItem="nLw-p8-z0n" firstAttribute="leading" secondItem="gTF-6p-P7s" secondAttribute="leading" constant="12" id="OHe-K2-gHw"/>
+                        <constraint firstAttribute="trailing" secondItem="HLc-KQ-PiC" secondAttribute="trailing" id="PDS-z0-bei"/>
+                        <constraint firstItem="1pe-cS-bh7" firstAttribute="leading" secondItem="gTF-6p-P7s" secondAttribute="leading" constant="12" id="ShN-CN-yJo"/>
+                        <constraint firstItem="HLc-KQ-PiC" firstAttribute="top" secondItem="nLw-p8-z0n" secondAttribute="bottom" constant="12" id="WgC-LT-01b"/>
+                        <constraint firstAttribute="trailing" secondItem="nLw-p8-z0n" secondAttribute="trailing" constant="12" id="gtX-eE-C5d"/>
+                        <constraint firstItem="HLc-KQ-PiC" firstAttribute="leading" secondItem="gTF-6p-P7s" secondAttribute="leading" id="zgb-a7-6BZ"/>
+                    </constraints>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <exclude reference="7nU-YC-a8T"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="crudAlertBackground"/>
+            <constraints>
+                <constraint firstItem="gTF-6p-P7s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="65" id="8Hi-ng-V4e"/>
+                <constraint firstItem="gTF-6p-P7s" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KU8-fN-ODg"/>
+                <constraint firstItem="gTF-6p-P7s" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NXe-1Z-g51"/>
+                <constraint firstAttribute="trailing" secondItem="gTF-6p-P7s" secondAttribute="trailing" constant="65" id="WwK-Dh-FwV"/>
+            </constraints>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="8Hi-ng-V4e"/>
+                    <exclude reference="WwK-Dh-FwV"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="acceptButton" destination="1vD-gP-BN0" id="oHD-5g-IvA"/>
+                <outlet property="birthdateTextField" destination="RM3-dl-WG4" id="yEl-js-6FY"/>
+                <outlet property="calendarButton" destination="4DY-Iv-4gG" id="MUn-wP-IuB"/>
+                <outlet property="cancelButton" destination="ZNC-j0-1DO" id="6vY-yk-7JF"/>
+                <outlet property="idTextField" destination="P3v-qZ-kV9" id="E6H-7e-nKy"/>
+                <outlet property="mainView" destination="gTF-6p-P7s" id="i9G-id-riY"/>
+                <outlet property="nameTextField" destination="WAq-b0-tjD" id="5Dg-65-5zn"/>
+                <outlet property="titleLabel" destination="1pe-cS-bh7" id="Gdm-19-3v4"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="crudAlertBackground">
+            <color red="0.57099997997283936" green="0.56699997186660767" blue="0.57400000095367432" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

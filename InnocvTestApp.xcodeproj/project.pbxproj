@@ -32,6 +32,13 @@
 		1A06D5D627BA4F3A00873C51 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5D527BA4F3A00873C51 /* ViewControllers.swift */; };
 		1A06D5D827BA4F7D00873C51 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5D727BA4F7D00873C51 /* Storyboards.swift */; };
 		1A06D5DA27BA502000873C51 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5D927BA502000873C51 /* UIViewController.swift */; };
+		1A06D5DE27BB8B8C00873C51 /* CRUDAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A06D5DD27BB8B8C00873C51 /* CRUDAlert.xib */; };
+		1A06D5E027BB8BB700873C51 /* CRUDAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5DF27BB8BB700873C51 /* CRUDAlert.swift */; };
+		1A06D5E227BB8E3000873C51 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A06D5E127BB8E3000873C51 /* Colors.xcassets */; };
+		1A06D5E427BB8E6000873C51 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E327BB8E6000873C51 /* UIColor.swift */; };
+		1A06D5E627BB8E8A00873C51 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E527BB8E8A00873C51 /* Colors.swift */; };
+		1A06D5E827BB977100873C51 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E727BB977100873C51 /* UIApplication.swift */; };
+		1A06D5EA27BBA20400873C51 /* Keyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E927BBA20400873C51 /* Keyboards.swift */; };
 		967843A0083626D76F5D869A /* Pods_InnocvTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B177BC0451A405EECD819774 /* Pods_InnocvTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +71,13 @@
 		1A06D5D527BA4F3A00873C51 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		1A06D5D727BA4F7D00873C51 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A06D5D927BA502000873C51 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		1A06D5DD27BB8B8C00873C51 /* CRUDAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CRUDAlert.xib; sourceTree = "<group>"; };
+		1A06D5DF27BB8BB700873C51 /* CRUDAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDAlert.swift; sourceTree = "<group>"; };
+		1A06D5E127BB8E3000873C51 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1A06D5E327BB8E6000873C51 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1A06D5E527BB8E8A00873C51 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1A06D5E727BB977100873C51 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		1A06D5E927BBA20400873C51 /* Keyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboards.swift; sourceTree = "<group>"; };
 		440BB5346B9A0CC4B00E3891 /* Pods-InnocvTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnocvTestApp.release.xcconfig"; path = "Target Support Files/Pods-InnocvTestApp/Pods-InnocvTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		B177BC0451A405EECD819774 /* Pods_InnocvTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InnocvTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE23832999F46FC0BBDC641 /* Pods-InnocvTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnocvTestApp.debug.xcconfig"; path = "Target Support Files/Pods-InnocvTestApp/Pods-InnocvTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +118,7 @@
 			children = (
 				1A06D5AE27BA3C3700873C51 /* Languages */,
 				1A06D5B827BA402900873C51 /* Providers */,
+				1A06D5DB27BB8B4600873C51 /* Designs */,
 				1A06D5C427BA438700873C51 /* Entities */,
 				1A06D5A427BA333800873C51 /* Scenes */,
 				1A06D5A327BA332F00873C51 /* Views */,
@@ -113,6 +128,7 @@
 				1A06D58C27BA30B100873C51 /* AppDelegate.swift */,
 				1A06D58E27BA30B100873C51 /* SceneDelegate.swift */,
 				1A06D59827BA30B500873C51 /* Assets.xcassets */,
+				1A06D5E127BB8E3000873C51 /* Colors.xcassets */,
 				1A06D59A27BA30B500873C51 /* LaunchScreen.storyboard */,
 				1A06D59D27BA30B500873C51 /* Info.plist */,
 				1A06D59527BA30B100873C51 /* InnocvTestApp.xcdatamodeld */,
@@ -158,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				1A06D5B627BA3D2600873C51 /* Strings.swift */,
+				1A06D5E527BB8E8A00873C51 /* Colors.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -179,6 +196,7 @@
 				1A06D5BC27BA406200873C51 /* Requests.swift */,
 				1A06D5C027BA41DF00873C51 /* URLs.swift */,
 				1A06D5D327BA4CE700873C51 /* Alerts.swift */,
+				1A06D5E927BBA20400873C51 /* Keyboards.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -208,8 +226,27 @@
 				1A06D5CF27BA48F900873C51 /* Formatter.swift */,
 				1A06D5D127BA491C00873C51 /* DateFormatter.swift */,
 				1A06D5D927BA502000873C51 /* UIViewController.swift */,
+				1A06D5E327BB8E6000873C51 /* UIColor.swift */,
+				1A06D5E727BB977100873C51 /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A06D5DB27BB8B4600873C51 /* Designs */ = {
+			isa = PBXGroup;
+			children = (
+				1A06D5DC27BB8B5900873C51 /* CRUDAlert */,
+			);
+			path = Designs;
+			sourceTree = "<group>";
+		};
+		1A06D5DC27BB8B5900873C51 /* CRUDAlert */ = {
+			isa = PBXGroup;
+			children = (
+				1A06D5DD27BB8B8C00873C51 /* CRUDAlert.xib */,
+				1A06D5DF27BB8BB700873C51 /* CRUDAlert.swift */,
+			);
+			path = CRUDAlert;
 			sourceTree = "<group>";
 		};
 		D64C0944BC6DB33F0CC5F59C /* Frameworks */ = {
@@ -292,7 +329,9 @@
 				1A06D59C27BA30B500873C51 /* LaunchScreen.storyboard in Resources */,
 				1A06D5B127BA3C5200873C51 /* Localizable.strings in Resources */,
 				1A06D59927BA30B500873C51 /* Assets.xcassets in Resources */,
+				1A06D5E227BB8E3000873C51 /* Colors.xcassets in Resources */,
 				1A06D5A627BA338D00873C51 /* Home.storyboard in Resources */,
+				1A06D5DE27BB8B8C00873C51 /* CRUDAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +368,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A06D5D627BA4F3A00873C51 /* ViewControllers.swift in Sources */,
+				1A06D5E627BB8E8A00873C51 /* Colors.swift in Sources */,
 				1A06D59727BA30B100873C51 /* InnocvTestApp.xcdatamodeld in Sources */,
+				1A06D5E827BB977100873C51 /* UIApplication.swift in Sources */,
 				1A06D5CE27BA48D000873C51 /* Date.swift in Sources */,
 				1A06D5C927BA44BA00873C51 /* UserResponse.swift in Sources */,
 				1A06D5C327BA423200873C51 /* Constants.swift in Sources */,
@@ -338,10 +379,13 @@
 				1A06D58F27BA30B100873C51 /* SceneDelegate.swift in Sources */,
 				1A06D5D227BA491C00873C51 /* DateFormatter.swift in Sources */,
 				1A06D5AD27BA34EF00873C51 /* R.swift in Sources */,
+				1A06D5E427BB8E6000873C51 /* UIColor.swift in Sources */,
 				1A06D5C127BA41DF00873C51 /* URLs.swift in Sources */,
 				1A06D5C627BA439F00873C51 /* UserEntity.swift in Sources */,
 				1A06D5B727BA3D2600873C51 /* Strings.swift in Sources */,
 				1A06D5BD27BA406200873C51 /* Requests.swift in Sources */,
+				1A06D5E027BB8BB700873C51 /* CRUDAlert.swift in Sources */,
+				1A06D5EA27BBA20400873C51 /* Keyboards.swift in Sources */,
 				1A06D5DA27BA502000873C51 /* UIViewController.swift in Sources */,
 				1A06D5BA27BA403A00873C51 /* ApiProvider.swift in Sources */,
 				1A06D5CC27BA48AD00873C51 /* String.swift in Sources */,
