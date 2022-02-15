@@ -39,6 +39,7 @@
 		1A06D5E627BB8E8A00873C51 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E527BB8E8A00873C51 /* Colors.swift */; };
 		1A06D5E827BB977100873C51 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E727BB977100873C51 /* UIApplication.swift */; };
 		1A06D5EA27BBA20400873C51 /* Keyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5E927BBA20400873C51 /* Keyboards.swift */; };
+		1A06D5EC27BBB63200873C51 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06D5EB27BBB63200873C51 /* UITextField.swift */; };
 		967843A0083626D76F5D869A /* Pods_InnocvTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B177BC0451A405EECD819774 /* Pods_InnocvTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		1A06D5E527BB8E8A00873C51 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A06D5E727BB977100873C51 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		1A06D5E927BBA20400873C51 /* Keyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboards.swift; sourceTree = "<group>"; };
+		1A06D5EB27BBB63200873C51 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		440BB5346B9A0CC4B00E3891 /* Pods-InnocvTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnocvTestApp.release.xcconfig"; path = "Target Support Files/Pods-InnocvTestApp/Pods-InnocvTestApp.release.xcconfig"; sourceTree = "<group>"; };
 		B177BC0451A405EECD819774 /* Pods_InnocvTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InnocvTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE23832999F46FC0BBDC641 /* Pods-InnocvTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InnocvTestApp.debug.xcconfig"; path = "Target Support Files/Pods-InnocvTestApp/Pods-InnocvTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				1A06D5D927BA502000873C51 /* UIViewController.swift */,
 				1A06D5E327BB8E6000873C51 /* UIColor.swift */,
 				1A06D5E727BB977100873C51 /* UIApplication.swift */,
+				1A06D5EB27BBB63200873C51 /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				1A06D5D627BA4F3A00873C51 /* ViewControllers.swift in Sources */,
 				1A06D5E627BB8E8A00873C51 /* Colors.swift in Sources */,
+				1A06D5EC27BBB63200873C51 /* UITextField.swift in Sources */,
 				1A06D59727BA30B100873C51 /* InnocvTestApp.xcdatamodeld in Sources */,
 				1A06D5E827BB977100873C51 /* UIApplication.swift in Sources */,
 				1A06D5CE27BA48D000873C51 /* Date.swift in Sources */,

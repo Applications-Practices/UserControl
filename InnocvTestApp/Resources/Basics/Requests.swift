@@ -12,11 +12,16 @@ extension R {
     struct Requests {
         
         //MARK: Http method types
-        enum METHOD : String {
+        enum METHOD: String {
             case GET
             case POST
             case PUT
             case DELETE
+        }
+        
+        //MARK: Http method types
+        enum CODE: Int {
+            case ACCEPT = 200
         }
         
         //MARK: Variables

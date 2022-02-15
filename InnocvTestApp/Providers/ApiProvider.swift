@@ -19,14 +19,23 @@ class ApiProvider {
         guard let url = url else { return completion(nil, false, nil) }
         let request = R.Requests.createRequest(url: url, method: method, body: body)
         URLSession.shared.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != R.Requests.CODE.ACCEPT.rawValue {
+                    failure(String(httpResponse.statusCode))
+                    return
+                }
+            }
+            
             if let error = error {
                 failure(error.localizedDescription)
+                return
             }
             
             guard let data = data else { return completion(nil, false, error) }
 
             if data.isEmpty {
                 completion(nil, true, error)
+                return
             }
             guard let response = R.Requests.genericDecoder(T.self, from: data, decodingStrategy: decodingStrategy) else { return completion(nil, false, error) }
             

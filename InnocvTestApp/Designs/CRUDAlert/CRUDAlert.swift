@@ -31,6 +31,7 @@ class CRUDAlert: UIView {
     func setup(title: String, crudType: R.Requests.METHOD) {
         self.setTitleLabel(title: title)
         self.typeAlert = crudType
+        
         self.mainView.layer.cornerRadius = 12
         
         self.setupObservers()
@@ -45,8 +46,8 @@ class CRUDAlert: UIView {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.addGestureRecognizer(tap)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(alertKeyboardDidOpen), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(alertKeyboardDidClose), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.alertKeyboardDidOpen), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.alertKeyboardDidClose), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         self.idTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         self.nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
@@ -54,6 +55,7 @@ class CRUDAlert: UIView {
     
     private func setupInitialConfiguration() {
         self.setTypeAlert()
+        self.setDatePicker()
         self.setActiveButton(button: self.cancelButton, enable: true)
         self.setActiveButton(button: self.acceptButton, enable: false)
     }
@@ -66,7 +68,7 @@ class CRUDAlert: UIView {
             self.nameTextField.isHidden = false
             self.nameTextField.isEnabled = true
             self.birthdateTextField.isHidden = false
-            self.birthdateTextField.isEnabled = false
+            self.birthdateTextField.isEnabled = true
             self.calendarButton.isHidden = false
             self.setActiveButton(button: self.calendarButton, enable: true)
         case .GET:
@@ -75,8 +77,8 @@ class CRUDAlert: UIView {
             self.nameTextField.isHidden = true
             self.nameTextField.isEnabled = false
             self.birthdateTextField.isHidden = true
-            self.calendarButton.isHidden = true
             self.birthdateTextField.isEnabled = false
+            self.calendarButton.isHidden = true
             self.setActiveButton(button: self.calendarButton, enable: false)
         case .PUT:
             self.idTextField.isHidden = false
@@ -84,8 +86,8 @@ class CRUDAlert: UIView {
             self.nameTextField.isHidden = false
             self.nameTextField.isEnabled = true
             self.birthdateTextField.isHidden = false
+            self.birthdateTextField.isEnabled = true
             self.calendarButton.isHidden = false
-            self.birthdateTextField.isEnabled = false
             self.setActiveButton(button: self.calendarButton, enable: true)
         case .DELETE:
             self.idTextField.isHidden = false
@@ -93,8 +95,8 @@ class CRUDAlert: UIView {
             self.nameTextField.isHidden = true
             self.nameTextField.isEnabled = false
             self.birthdateTextField.isHidden = true
-            self.calendarButton.isHidden = true
             self.birthdateTextField.isEnabled = false
+            self.calendarButton.isHidden = true
             self.setActiveButton(button: self.calendarButton, enable: false)
         }
     }
@@ -140,23 +142,28 @@ class CRUDAlert: UIView {
         self.setActiveButton(button: self.acceptButton, enable: activeButton)
     }
     
+    private func setDatePicker() {
+        self.birthdateTextField.addInputViewDatePicker(target: self, selector: #selector(self.datePickerValue))
+    }
+    
     private func setAcceptAction() {
         self.checkId()
         self.checkName()
         
+        self.setDismissAction()
         self.acceptAction?(self)
     }
     
-    private func setCancelAction() {
+    private func setDismissAction() {
         self.removeFromSuperview()
     }
     
     @IBAction func didTapCalendarButton(_ sender: Any) {
-        
+        self.birthdateTextField.becomeFirstResponder()
     }
     
     @IBAction func didTapCancelButton(_ sender: Any) {
-        self.setCancelAction()
+        self.setDismissAction()
     }
     
     @IBAction func didTapAcceptButton(_ sender: Any) {
@@ -177,5 +184,20 @@ class CRUDAlert: UIView {
 
     @objc func alertKeyboardDidClose(sender: NSNotification) {
         R.Keyboards.alertKeyboardDidClose(sender: sender, view: self)
+    }
+    
+    @objc func datePickerValue(){
+        if let datePicker = self.birthdateTextField.inputView as? UIDatePicker {
+            let dateFormatter: DateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+            let selectedDate: String = dateFormatter.string(from: datePicker.date)
+            
+            self.birthdateTextField.text = selectedDate
+            self.birthdate = datePicker.date
+        }
+        
+        self.setActiveAcceptButton()
+        self.birthdateTextField.resignFirstResponder()
     }
 }

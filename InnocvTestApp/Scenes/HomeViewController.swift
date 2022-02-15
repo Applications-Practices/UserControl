@@ -62,6 +62,10 @@ class HomeViewController: UIViewController {
                 name = nameAlert
             }
             
+            if let birthdateDate = alert.birthdate {
+                birthdate = birthdateDate
+            }
+            
             UserProvider().createNewUser(id: id, name: name, birthdate: birthdate, completion: { result in
                 DispatchQueue.main.async {
                     self.createResultAlert(result: result)
@@ -71,18 +75,44 @@ class HomeViewController: UIViewController {
     }
     
     private func updateUser() {
-        UserProvider().createNewUser(id: 4902, name: "Pablo2", birthdate: Date(), completion: { result in
-            DispatchQueue.main.async {
-                self.createResultAlert(result: result)
+        self.createCRUDAlert(title: R.Strings.homeUpdateUser, crudType: .PUT, acceptAction: { alert in
+            var id = 0
+            var name = ""
+            var birthdate = Date()
+            
+            if let idAlert = alert.id {
+                id = idAlert
             }
+            
+            if let nameAlert = alert.name {
+                name = nameAlert
+            }
+            
+            if let birthdateDate = alert.birthdate {
+                birthdate = birthdateDate
+            }
+            
+            UserProvider().updateUser(id: id, name: name, birthdate: birthdate, completion: { result in
+                DispatchQueue.main.async {
+                    self.createResultAlert(result: result)
+                }
+            })
         })
     }
     
     private func deleteUser() {
-        UserProvider().deleteUser(id: 4925, completion: { result in
-            DispatchQueue.main.async {
-                self.createResultAlert(result: result)
+        self.createCRUDAlert(title: R.Strings.homeDeleteUser, crudType: .DELETE, acceptAction: { alert in
+            var id = 0
+            
+            if let idAlert = alert.id {
+                id = idAlert
             }
+            
+            UserProvider().deleteUser(id: id, completion: { result in
+                DispatchQueue.main.async {
+                    self.createResultAlert(result: result)
+                }
+            })
         })
     }
     
