@@ -193,18 +193,15 @@ class CRUDAlert: UIView {
     }
 
     @objc func alertKeyboardDidClose(sender: NSNotification) {
-        R.Keyboards.alertKeyboardDidClose(sender: sender, view: self)
+        R.Keyboards.alertKeyboardDidClose(sender: sender)
     }
     
     @objc func datePickerValue(){
-        if let datePicker = self.birthdateTextField.inputView as? UIDatePicker {
-            let dateFormatter: DateFormatter = DateFormatter()
-            
-            dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
-            let selectedDate: String = dateFormatter.string(from: datePicker.date)
-            
-            self.birthdateTextField.text = selectedDate
-            self.birthdate = datePicker.date
+        if let viewDatePicker = self.birthdateTextField.inputView {
+            if let datePicker = viewDatePicker.subviews.first as? UIDatePicker {
+                self.birthdateTextField.text = datePicker.date.europeanDateString
+                self.birthdate = datePicker.date
+            }
         }
         
         self.setActiveAcceptButton()

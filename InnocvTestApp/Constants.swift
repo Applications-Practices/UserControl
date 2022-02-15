@@ -9,6 +9,10 @@ import Foundation
 
 class Constants {
     
+    //MARK: APP
+    static var dateFormatterUUEE    = "yyyy/MM/dd HH:mm:ss"
+    static var dateFormatterEU      = "dd/MM/yyyy HH:mm:ss"
+    
     //MARK: API
     static var API_BASE_URL         = "https://hello-world.innocv.com/api"
     static var API_CREATE_NEW_USER  = "/User"

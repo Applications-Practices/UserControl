@@ -12,18 +12,27 @@ extension UITextField {
 
     func addInputViewDatePicker(target: Any, selector: Selector) {
         let screenWidth = UIScreen.main.bounds.width
-
-        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 400))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 400))
+        
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+        //datePicker.sizeToFit()
+        datePicker.preferredDatePickerStyle = .inline
         datePicker.datePickerMode = .dateAndTime
-        self.inputView = datePicker
-
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
+        datePicker.layer.masksToBounds = true
+        datePicker.center.x = view.center.x
+        datePicker.backgroundColor = .clear
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cancelBarButton = UIBarButtonItem(title: R.Strings.keyboardCancelButton, style: .plain, target: self, action: #selector(cancelPressed))
-        let doneBarButton = UIBarButtonItem(title: R.Strings.keyboardDoneButton, style: .plain, target: target, action: selector)
+        let doneBarButton = UIBarButtonItem(title: R.Strings.keyboardDoneButton, style: .done, target: target, action: selector)
         toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
 
         self.inputAccessoryView = toolBar
+        
+        view.addSubview(datePicker)
+        self.inputView = view
     }
 
     @objc func cancelPressed() {

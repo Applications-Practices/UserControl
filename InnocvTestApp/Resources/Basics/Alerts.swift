@@ -34,7 +34,7 @@ extension R {
         static func createCRUDAlert(title: String, crudType: R.Requests.METHOD, acceptAction: ((_ alert: CRUDAlert) -> Void)?) -> CRUDAlert? {
             let crudAlert = Bundle.main.loadNibNamed(R.Alerts.crudAlertName, owner: self, options: nil)?.first as? CRUDAlert
             
-            crudAlert?.frame = R.window!.bounds
+            crudAlert?.frame = R.window?.bounds ?? .zero
             crudAlert?.setup(title: title, crudType: crudType)
             crudAlert?.acceptAction = acceptAction
             
