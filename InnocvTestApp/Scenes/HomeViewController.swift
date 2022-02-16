@@ -33,16 +33,11 @@ class HomeViewController: UIViewController {
     
     func setDefaultText() {
         self.titleLabel.text = R.Strings.homeTitle
+        
         self.newUserButton.setTitle(R.Strings.homeCreateNewUser, for: .normal)
-        
         self.getUserListButton.setTitle(R.Strings.homeGetUserList, for: .normal)
-        self.getUserListButton.isHidden = true
-        
         self.getUserButton.setTitle(R.Strings.homeGetUser, for: .normal)
-        self.getUserButton.isHidden = true
-        
         self.updateUserButton.setTitle(R.Strings.homeUpdateUser, for: .normal)
-        
         self.deleteUserButton.setTitle(R.Strings.homeDeleteUser, for: .normal)
         
         self.undoLastUserActionButton.setTitle(R.Strings.homeUndoLastUserAction, for: .normal)
@@ -69,7 +64,46 @@ class HomeViewController: UIViewController {
             
             UserProvider().createNewUser(id: id, name: name, birthdate: birthdate, completion: { result in
                 DispatchQueue.main.async {
-                    self.createResultAlert(result: result)
+                    if let result = result {
+                        self.createResultAlert(result: result)
+                    }
+                    else {
+                        self.createResultAlert(result: false)
+                    }
+                }
+            })
+        })
+    }
+    
+    private func getUserList() {
+        UserProvider().getUser(id: nil, completion: { result in
+            DispatchQueue.main.async {
+                if let result = result {
+                    
+                }
+                else {
+                    self.createResultAlert(result: false)
+                }
+            }
+        })
+    }
+    
+    private func getUser() {
+        self.createCRUDAlert(title: R.Strings.homeGetUser, crudType: .GET, acceptAction: { alert in
+            var id = 0
+            
+            if let idAlert = alert.id {
+                id = idAlert
+            }
+            
+            UserProvider().getUser(id: id, completion: { result in
+                DispatchQueue.main.async {
+                    if let result = result {
+                        
+                    }
+                    else {
+                        self.createResultAlert(result: false)
+                    }
                 }
             })
         })
@@ -95,7 +129,12 @@ class HomeViewController: UIViewController {
             
             UserProvider().updateUser(id: id, name: name, birthdate: birthdate, completion: { result in
                 DispatchQueue.main.async {
-                    self.createResultAlert(result: result)
+                    if let result = result {
+                        self.createResultAlert(result: result)
+                    }
+                    else {
+                        self.createResultAlert(result: false)
+                    }
                 }
             })
         })
@@ -111,7 +150,12 @@ class HomeViewController: UIViewController {
             
             UserProvider().deleteUser(id: id, completion: { result in
                 DispatchQueue.main.async {
-                    self.createResultAlert(result: result)
+                    if let result = result {
+                        self.createResultAlert(result: result)
+                    }
+                    else {
+                        self.createResultAlert(result: false)
+                    }
                 }
             })
         })
@@ -148,11 +192,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didTapGetUserListButton(_ sender: Any) {
-    
+        self.getUserList()
     }
     
     @IBAction func didTapGetUserButton(_ sender: Any) {
-    
+        self.getUser()
     }
     
     @IBAction func didTapUpdateUserButton(_ sender: Any) {

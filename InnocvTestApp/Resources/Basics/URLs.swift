@@ -48,8 +48,8 @@ extension R {
             return self.createURL(string: self.apiGetUserList)
         }
         
-        static func getUrlGetUser() -> URL? {
-            return self.createURL(string: self.apiGetUser)
+        static func getUrlGetUser(id: Int) -> URL? {
+            return self.createURL(string: self.apiGetUser + "/\(id)")
         }
         
         static func getUrlUpdateUser() -> URL? {

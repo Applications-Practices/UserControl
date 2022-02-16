@@ -6,67 +6,103 @@
 //
 
 import Foundation
+import UIKit
 
 class UserProvider: ApiProvider {
     
-    func createNewUser(id: Int, name: String, birthdate: Date, completion: @escaping (_ result: Bool) -> ()) {
+    private func userRequest<T:Codable>(entity: T.Type, url: URL?, methodType: R.Requests.METHOD, body: [String:Any]?, completion: @escaping (_ result: Any?) -> ()) {
+        self.commonRequest(entity: T.self, url: url, method: methodType, body: body, decodingStrategy: .convertFromSnakeCase, completion: { data, result, error in
+            //Error
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            //Data entity
+            if let data = data {
+                completion(data)
+                return
+            }
+            
+            //Bool
+            if let result = result {
+                completion(result)
+                return
+            }
+
+        }, failure: { error in
+            //print("Error Updating User: " + error)
+            completion(error)
+        })
+    }
+    
+    func createNewUser(id: Int, name: String, birthdate: Date, completion: @escaping (_ result: Bool?) -> ()) {
         var body = [String:Any]()
         body[UserEntity.ID] = id
         body[UserEntity.NAME] = name
         body[UserEntity.BIRTHDATE] = birthdate.iso8601withFractionalSeconds
         
-        self.commonRequest(entity: UserResponse.self, url: R.URLs.getUrlCreateNewUser(), method: .POST, body: body, decodingStrategy: .convertFromSnakeCase, completion: { data, result, error in
-            if let _ = error { completion(false) }
-            
-            guard let result = result else { return completion(false) }
-
-            completion(result)
-        }, failure: { error in
-            completion(false)
-            print("Error Creating New User: " + error)
+        self.userRequest(entity: UserResponse.self, url: R.URLs.getUrlCreateNewUser(), methodType: .POST, body: body, completion: { result in
+            if let result = result as? Bool {
+                completion(result)
+            }
+            else {
+                completion(nil)
+            }
         })
     }
     
-    func updateUser(id: Int, name: String, birthdate: Date, completion: @escaping (_ result: Bool) -> ()) {
+    func getUser(id: Int?, completion: @escaping (_ result: [UserEntity]?) -> ()) {
+        var url: URL? = nil
+        if let id = id {
+            url = R.URLs.getUrlGetUser(id: id)
+            self.userRequest(entity: UserEntity.self, url: url, methodType: .GET, body: nil, completion: { result in
+                if let result = result as? UserEntity {
+                    completion([result])
+                }
+                else {
+                    completion(nil)
+                }
+            })
+        }
+        else {
+            url = R.URLs.getUrlGetUserList()
+            self.userRequest(entity: [UserEntity].self, url: url, methodType: .GET, body: nil, completion: { result in
+                if let result = result as? [UserEntity] {
+                    completion(result)
+                }
+                else {
+                    completion(nil)
+                }
+            })
+        }
+    }
+    
+    func updateUser(id: Int, name: String, birthdate: Date, completion: @escaping (_ result: Bool?) -> ()) {
         var body = [String:Any]()
         body[UserEntity.ID] = id
         body[UserEntity.NAME] = name
         body[UserEntity.BIRTHDATE] = birthdate.iso8601withFractionalSeconds
         
-        self.commonRequest(entity: UserResponse.self, url: R.URLs.getUrlUpdateUser(), method: .PUT, body: body, decodingStrategy: .convertFromSnakeCase, completion: { data, result, error in
-            if let _ = error { completion(false) }
-            
-            guard let result = result else { return completion(false) }
-
-            completion(result)
-        }, failure: { error in
-            completion(false)
-            print("Error Updating User: " + error)
+        self.userRequest(entity: UserResponse.self, url: R.URLs.getUrlUpdateUser(), methodType: .PUT, body: body, completion: { result in
+            if let result = result as? Bool {
+                completion(result)
+            }
+            else {
+                completion(nil)
+            }
         })
     }
     
-    func deleteUser(id: Int, completion: @escaping (_ result: Bool) -> ()) {
-        self.commonRequest(entity: UserResponse.self, url: R.URLs.getUrlDeleteUser(id: id), method: .DELETE, body: nil, decodingStrategy: .convertFromSnakeCase, completion: { data, result, error in
-            if let _ = error { completion(false) }
-            
-            guard let result = result else { return completion(false) }
-
-            completion(result)
-        }, failure: { error in
-            completion(false)
-            print("Error Deleting User: " + error)
+    func deleteUser(id: Int, completion: @escaping (_ result: Bool?) -> ()) {
+        self.userRequest(entity: UserResponse.self, url: R.URLs.getUrlDeleteUser(id: id), methodType: .DELETE, body: nil, completion: { result in
+            if let result = result as? Bool {
+                completion(result)
+            }
+            else {
+                completion(nil)
+            }
         })
     }
-    
-    /*func getUserList(completion: @escaping (_ result: [UserEntity]?) -> ()) {
-        self.commonRequest(entity: UserResponse.self, url: R.URLs.getUrlCreateNewUser(), method: .GET, body: nil, decodingStrategy: .convertFromSnakeCase, completion: { result in
-            guard let result = result else { return completion([]) }
-
-            completion(result.users)
-        }, failure: { error in
-            completion([])
-            print("Error Getting User List: " + error)
-        })
-    }*/
     
 }
